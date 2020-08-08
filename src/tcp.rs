@@ -12,7 +12,7 @@ pub async fn main() -> Result<(), Box<dyn Error>> {
     loop {
         let (mut socket, _) = listener.accept().await?;
         tokio::spawn(async move {
-            let mut buf: [u8; 1024] = [0; 1024];
+            let mut buf = vec![0; 1024];
             loop {
                 let n = socket.read(&mut buf).await.expect("socket read failed");
                 if n == 0 {
