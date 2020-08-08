@@ -7,10 +7,10 @@ edition = "2018"
 [dependencies]
 tokio = { version = "0.2", features = ["full"] }
 
-[[example]]
-name = "server"
-path = "src/server.rs"
+[[bin]]
+name = "tcp"
+path = "src/tcp.rs"
 
-[[example]]
-name = "client"
-path = "src/client.rs"
+[[bin]]
+name = "udp"
+path = "src/udp.rs"
